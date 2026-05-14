@@ -1,0 +1,22 @@
+{
+  "name": "time-whisper",
+  "version": "1.0.0",
+  "description": "A warm intergenerational Q&A and message-board web app backed by SQLite.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "dev": "node --watch --no-warnings server.js",
+    "check": "node --check public/app.js && node --no-warnings --check server.js"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "keywords": [
+    "nodejs",
+    "sqlite",
+    "vanilla-js",
+    "message-board"
+  ],
+  "author": "XuYui",
+  "license": "MIT"
+}

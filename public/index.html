@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时光悄悄话</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="page">
+      <header class="hero section-animate">
+        <p class="hero-tag">跨越代际的温柔对话</p>
+        <h1>时光悄悄话</h1>
+        <p class="hero-sub">小孩提问，长辈回答；大学生留言，送上祝福。</p>
+      </header>
+
+      <section class="panel section-animate" aria-labelledby="qa-title">
+        <div class="panel-head">
+          <h2 id="qa-title">板块一：问答区</h2>
+          <span class="panel-note">小孩问 · 长辈答</span>
+        </div>
+        <p class="desc">
+          问答内容支持工作人员后期录入，数据会保存到数据库中。
+        </p>
+
+        <div id="qa-list" class="qa-grid"></div>
+
+        <form id="qa-form" class="entry-form">
+          <h3>工作人员录入问答</h3>
+          <label for="qa-question">问题（小孩）</label>
+          <textarea
+            id="qa-question"
+            name="question"
+            rows="2"
+            placeholder="请输入小孩提出的问题"
+            required
+          ></textarea>
+
+          <label for="qa-answer">回答（长辈）</label>
+          <textarea
+            id="qa-answer"
+            name="answer"
+            rows="3"
+            placeholder="请输入长辈们的回答"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary">新增问答</button>
+        </form>
+      </section>
+
+      <section class="panel section-animate" aria-labelledby="note-title">
+        <div class="panel-head">
+          <h2 id="note-title">板块二：留言区</h2>
+          <span class="panel-note">输入留言名后添加便签</span>
+        </div>
+        <p class="desc">
+          输入留言名后可发布便签，写下感悟与对长辈们的祝福。桌面端支持拖动便签位置。
+        </p>
+
+        <div id="login-card" class="auth-card">
+          <h3>输入留言名</h3>
+          <form id="login-form">
+            <label for="display-name">留言名</label>
+            <input
+              id="display-name"
+              name="displayName"
+              autocomplete="nickname"
+              maxlength="16"
+              placeholder="请输入你的留言名"
+              required
+            />
+
+            <button type="submit" class="btn btn-primary">开始留言</button>
+          </form>
+          <p id="login-msg" class="msg-line" aria-live="polite"></p>
+        </div>
+
+        <div id="note-actions" class="note-actions hidden">
+          <p id="welcome" class="welcome"></p>
+          <button id="logout-btn" type="button" class="btn btn-ghost">更换留言名</button>
+        </div>
+
+        <form id="note-form" class="entry-form hidden">
+          <h3>写一张便签</h3>
+          <label for="note-content">留言内容</label>
+          <textarea
+            id="note-content"
+            name="content"
+            rows="4"
+            maxlength="120"
+            placeholder="写下你的感悟和想对长辈们说的话..."
+            required
+          ></textarea>
+          <div class="form-foot">
+            <span id="counter">0 / 120</span>
+            <button type="submit" class="btn btn-primary">发布便签</button>
+          </div>
+        </form>
+
+        <div id="note-board" class="note-board" aria-label="留言便签板"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
